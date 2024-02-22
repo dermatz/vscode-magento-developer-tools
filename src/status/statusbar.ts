@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
-const config = vscode.workspace.getConfiguration('magento-developer-tools');
-const statusBar = config.get('statusBar');
+import config from '../config/config';
 
+const statusBar = config.get('statusBar');
 
 /**
  * Registers the command to open the Magento Developer Tools extension settings.
