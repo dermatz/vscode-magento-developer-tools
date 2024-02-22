@@ -27,7 +27,12 @@
     "configuration": {
         "title": "Magento Developer Tools",
         "properties": {
-            "magento-developer-tools.magentoThemeLocations": {
+            "magento-developer-tools.statusBar": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show the Magento Developer Tools in Status Bar."
+            },
+              "magento-developer-tools.magentoThemeLocations": {
               "type": "array",
               "default": [
                 "/path/to/your/custom/magento/theme"
