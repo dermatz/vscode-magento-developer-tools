@@ -16,8 +16,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "magento-developer-tools.helloWorld",
-        "title": "Hello World"
+        "command": "magento-developer-tools.start",
+        "title": "Magento Developer Tools: Start"
+      },
+      {
+        "command": "extension.openMagentoDeveloperToolsSettings",
+        "title": "Open Magento Developer Tools Settings"
       }
     ],
     "configuration": {
@@ -33,7 +37,7 @@
                 "type": "string"
               }
             },
-            "magento-developer-tools.vendorLocation": {
+            "magento-desveloper-tools.vendorLocation": {
                 "type": "string",
                 "default": "vendor",
                 "description": "The location of your vendor directory. Default is 'vendor'."
