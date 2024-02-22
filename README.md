@@ -1,4 +1,4 @@
-# VSCode Extention Magento Ddeveloper Tools
+# VSCode Extention Magento Developer Tools
 
 <img src="https://img.shields.io/github/last-commit/dermatz/vscode-magento-developer-tools" alt="Last commit date Badge">
 
