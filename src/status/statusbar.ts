@@ -16,7 +16,7 @@ vscode.commands.registerCommand('extension.openMagentoDeveloperToolsSettings', (
  */
 export function createStatusBarItem() {
     const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
-    statusBarItem.text = '🛠️ Magento Developer Tools';
+    statusBarItem.text = '$(gear) Magento Developer Tools';
     statusBarItem.tooltip = 'Open Extension Settings in Workspace Settings';
     statusBarItem.command = 'extension.openMagentoDeveloperToolsSettings';
     statusBarItem.show();
