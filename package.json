@@ -3,9 +3,11 @@
   "displayName": "Magento Developer Tools",
   "description": "Provides Magento Tools in VSCode",
   "version": "0.0.1",
+  "publisher": "dermatz",
   "engines": {
     "vscode": "^1.86.0"
   },
+  "icon": "images/magento-developer-tools-logo.png",
   "categories": [
     "Other"
   ],
@@ -17,7 +19,27 @@
         "command": "magento-developer-tools.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "configuration": {
+        "title": "Magento Developer Tools",
+        "properties": {
+            "magento-developer-tools.magentoThemeLocations": {
+              "type": "array",
+              "default": [
+                "/path/to/your/custom/magento/theme"
+              ],
+              "description": "The locations of your Magento 2 Themes.",
+              "items": {
+                "type": "string"
+              }
+            },
+            "magento-developer-tools.vendorLocation": {
+                "type": "string",
+                "default": "vendor",
+                "description": "The location of your vendor directory. Default is 'vendor'."
+            }
+        }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
