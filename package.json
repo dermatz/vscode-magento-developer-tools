@@ -20,10 +20,30 @@
         "title": "Magento Developer Tools: Start"
       },
       {
-        "command": "extension.openMagentoDeveloperToolsSettings",
-        "title": "Open Magento Developer Tools Settings"
+        "command": "magento-developer-tools.openSettings",
+        "title": "Settings"
       }
     ],
+    "submenus":[
+      {
+        "id" : "mdtContextMenuMain",
+        "label" : "Magento Developer Tools"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "mdtContextMenuMain"
+        }
+      ],
+
+      "mdtContextMenuMain": [
+        {
+          "command": "magento-developer-tools.openSettings",
+          "group": "Magento Developer Tools"
+        }
+      ]
+    },
     "configuration": {
         "title": "Magento Developer Tools",
         "properties": {
