@@ -11,13 +11,17 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": ["*"],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "magento-developer-tools.start",
         "title": "Magento Developer Tools: Start"
+      },
+      {
+        "command": "magento-developer-tools.detectMagentoRoot",
+        "title": "Magento Developer Tools: Find Magento Root"
       },
       {
         "command": "magento-developer-tools.openSettings",
@@ -39,8 +43,10 @@
 
       "mdtContextMenuMain": [
         {
-          "command": "magento-developer-tools.openSettings",
-          "group": "Magento Developer Tools"
+          "command": "magento-developer-tools.detectMagentoRoot"
+        },
+        {
+          "command": "magento-developer-tools.openSettings"
         }
       ]
     },
@@ -52,21 +58,24 @@
                 "default": true,
                 "description": "Show the Magento Developer Tools in Status Bar."
             },
-              "magento-developer-tools.magentoThemeLocations": {
+            "magento-developer-tools.vendorLocation": {
+                "type": "string",
+                "default": "vendor",
+                "description": "The location of your vendor directory. Default is 'vendor'."
+            },
+            "magento-developer-tools.magentoThemeLocations": {
               "type": "array",
-              "default": [
-                "/path/to/your/custom/magento/theme"
-              ],
-              "description": "The locations of your Magento 2 Themes.",
+              "default": [],
+              "description": "Add the relative path to all of your Magento 2 Themes. e.g. 'app/design/frontend/Vendor/Theme'. Default is empty.",
               "items": {
                 "type": "string"
               }
             },
-            "magento-desveloper-tools.vendorLocation": {
-                "type": "string",
-                "default": "vendor",
-                "description": "The location of your vendor directory. Default is 'vendor'."
-            }
+            "magento-developer-tools.magentoRoot": {
+              "type": "string",
+              "default": "",
+              "description": "The location of your Magento 2 Project root directory. Default is empty."
+          }
         }
     }
   },
