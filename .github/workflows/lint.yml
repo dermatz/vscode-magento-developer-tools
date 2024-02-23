@@ -11,6 +11,6 @@ jobs:
         with:
           node-version: 18
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
       - name: Lint
         run: node_modules/.bin/trunk check
