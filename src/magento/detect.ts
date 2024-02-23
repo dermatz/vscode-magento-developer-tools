@@ -1,10 +1,13 @@
-import * as vscode from 'vscode';
-import config from '../config/config';
+import * as vscode from "vscode";
+import config from "../config/config";
 
 /**
  * Registers the `magento-developer-tools.detectMagentoRoot` command.
  */
-vscode.commands.registerCommand('magento-developer-tools.detectMagentoRoot', detectMagento);
+vscode.commands.registerCommand(
+  "magento-developer-tools.detectMagentoRoot",
+  detectMagento,
+);
 
 /**
  * Detects the Magento root directory by searching for the `app/bootstrap.php` file.
@@ -15,17 +18,30 @@ vscode.commands.registerCommand('magento-developer-tools.detectMagentoRoot', det
  * @returns A boolean indicating whether the Magento root directory was found or not.
  */
 export async function detectMagento() {
-    let magentoRoot = config.get('magentoRoot');
-    if (magentoRoot && (await vscode.workspace.findFiles(`${magentoRoot}/app/bootstrap.php`)).length > 0) {
-        vscode.window.showInformationMessage(`Magento Developer Tools: Magento root found in ${magentoRoot}`);
-        return true;
-    } else if (!magentoRoot && (await vscode.workspace.findFiles(`app/bootstrap.php`)).length > 0) {
-        vscode.window.showInformationMessage('Magento Developer Tools: Magento root found');
-        return true;
-    } else {
-        vscode.window.showErrorMessage('Magento Developer Tools: Magento root not found');
-        return false;
-    }
+  let magentoRoot = config.get("magentoRoot");
+  if (
+    magentoRoot &&
+    (await vscode.workspace.findFiles(`${magentoRoot}/app/bootstrap.php`))
+      .length > 0
+  ) {
+    vscode.window.showInformationMessage(
+      `Magento Developer Tools: Magento root found in ${magentoRoot}`,
+    );
+    return true;
+  } else if (
+    !magentoRoot &&
+    (await vscode.workspace.findFiles(`app/bootstrap.php`)).length > 0
+  ) {
+    vscode.window.showInformationMessage(
+      "Magento Developer Tools: Magento root found",
+    );
+    return true;
+  } else {
+    vscode.window.showErrorMessage(
+      "Magento Developer Tools: Magento root not found",
+    );
+    return false;
+  }
 }
 
 export default detectMagento;
