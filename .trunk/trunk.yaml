@@ -33,4 +33,5 @@ actions:
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
   enabled:
+    - npm-check
     - trunk-upgrade-available
