@@ -1,4 +1,4 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 import { detectMagento } from "./magento/detect";
 import { copyCommand } from "./magento/copyCommand";
 import { createStatusBarItem } from "./status/statusbar";

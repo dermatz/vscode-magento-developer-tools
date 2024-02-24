@@ -15,7 +15,9 @@ vscode.commands.registerCommand("magento-developer-tools.openSettings", () => {
  * @returns The created status bar item.
  */
 export function createStatusBarItem() {
-  const statusBar = vscode.workspace.getConfiguration('magento-developer-tools').get("statusBar");
+  const statusBar = vscode.workspace
+    .getConfiguration("magento-developer-tools")
+    .get("statusBar");
   const statusBarItem = vscode.window.createStatusBarItem(
     vscode.StatusBarAlignment.Right,
     100,
