@@ -18,6 +18,10 @@
   "contributes": {
     "commands": [
       {
+        "command": "magento-developer-tools.copyToThemeLocation",
+        "title": "Copy to Magento Theme Location"
+      },
+      {
         "command": "magento-developer-tools.start",
         "title": "Magento Developer Tools: Start"
       },
