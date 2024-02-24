@@ -1,5 +1,4 @@
 import * as vscode from "vscode";
-import config from "../config/config";
 
 /**
  * Registers the command to open the Magento Developer Tools extension settings.
@@ -16,7 +15,7 @@ vscode.commands.registerCommand("magento-developer-tools.openSettings", () => {
  * @returns The created status bar item.
  */
 export function createStatusBarItem() {
-  const statusBar = config.get("statusBar");
+  const statusBar = vscode.workspace.getConfiguration('magento-developer-tools').get("statusBar");
   const statusBarItem = vscode.window.createStatusBarItem(
     vscode.StatusBarAlignment.Right,
     100,
