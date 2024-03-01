@@ -28,4 +28,5 @@ jobs:
       - name: Install Trunk
         run: curl https://get.trunk.io -fsSL | bash -s -- -y
       - name: Run Trunk check
+        run: trunk init
         run: trunk check --all --ci-progress --monitor=false
