@@ -25,9 +25,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
       - name: Install Trunk
         run: curl https://get.trunk.io -fsSL | bash -s -- -y
-      - name: Initialize Trunk
-        run: trunk init
       - name: Run Trunk check
         run: trunk check --all --ci-progress --monitor=false
