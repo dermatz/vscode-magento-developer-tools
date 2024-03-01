@@ -17,7 +17,9 @@ vscode.commands.registerCommand(
  * @returns A boolean indicating whether the Magento root directory was found or not.
  */
 export async function detectMagento() {
-  let magentoRoot = vscode.workspace.getConfiguration('magento-developer-tools').get("magentoRoot");
+  let magentoRoot = vscode.workspace
+    .getConfiguration("magento-developer-tools")
+    .get("magentoRoot");
   if (
     magentoRoot &&
     (await vscode.workspace.findFiles(`${magentoRoot}/app/bootstrap.php`))
