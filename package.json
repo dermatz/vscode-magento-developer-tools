@@ -28,6 +28,10 @@
       {
         "command": "magento-developer-tools.openSettings",
         "title": "Settings"
+      },
+      {
+        "command": "magento-developer-tools.checkIfMagento2Project",
+        "title": "Magento Developer Tools: Check if Magento 2 Project"
       }
     ],
     "submenus": [

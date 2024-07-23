@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { detectMagento } from "./magento/detect";
+import { detectMagento, checkIfMagento2Project } from "./magento/detect";
 import { createStatusBarItem } from "./status/statusbar";
 
 export async function activate(context: vscode.ExtensionContext) {
@@ -14,7 +14,13 @@ export async function activate(context: vscode.ExtensionContext) {
     },
   );
 
+  let checkMagentoDisposable = vscode.commands.registerCommand(
+    "magento-developer-tools.checkIfMagento2Project",
+    checkIfMagento2Project,
+  );
+
   context.subscriptions.push(disposable);
+  context.subscriptions.push(checkMagentoDisposable);
 }
 
 export function deactivate() {}

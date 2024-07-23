@@ -43,4 +43,31 @@ export async function detectMagento() {
   }
 }
 
+/**
+ * Checks if the current project is a Magento 2 project by searching for the `composer.json` and `app/bootstrap.php` files.
+ * If the files are found, it checks the contents of `composer.json` for the string 'magento/'.
+ * Displays appropriate messages based on the presence and contents of the files.
+ *
+ * @returns A boolean indicating whether the project is a Magento 2 project or not.
+ */
+export async function checkIfMagento2Project() {
+  let composerJson = await vscode.workspace.findFiles('composer.json');
+  let bootstrap = await vscode.workspace.findFiles('./app/bootstrap.php');
+
+  if (composerJson.length === 0 && bootstrap.length === 0) {
+    vscode.window.showErrorMessage('This is not a Magento 2 project');
+    return false;
+  } else {
+    let file = await vscode.workspace.openTextDocument(composerJson[0]);
+    let text = file.getText();
+    if (text.includes('magento/')) {
+      vscode.window.showInformationMessage('This is a Magento 2 project');
+      return true;
+    } else {
+      vscode.window.showErrorMessage('This is not a Magento 2 project');
+      return false;
+    }
+  }
+}
+
 export default detectMagento;
